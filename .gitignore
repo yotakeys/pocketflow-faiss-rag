@@ -94,3 +94,5 @@ tmp/
 logs/
 cache/
 __pypackages__/
+
+data/

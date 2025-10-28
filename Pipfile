@@ -7,9 +7,11 @@ name = "pypi"
 pocketflow = "*"
 openai = "*"
 faiss-cpu = "*"
+numpy = "*"
 
 [dev-packages]
 pylint = "*"
+mypy = "*"
 
 [requires]
 python_version = "3.12"
