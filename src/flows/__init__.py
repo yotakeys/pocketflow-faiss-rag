@@ -2,6 +2,4 @@
 
 from .flow import FlowChat
 
-__all__ = [
-    'FlowChat'
-]
+__all__ = ["FlowChat"]

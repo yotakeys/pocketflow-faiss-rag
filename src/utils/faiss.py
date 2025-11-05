@@ -1,8 +1,10 @@
 """Utility functions for FAISS operations."""
 
+import numpy as np
+
 from config import config
 from constants import FaissCategory, FaissData
-import numpy as np
+
 
 def add_index(category: FaissCategory, data: FaissData):
     """
@@ -14,6 +16,7 @@ def add_index(category: FaissCategory, data: FaissData):
     """
     index = getattr(config.faiss, category)
     index.add_with_ids(data["vector"], np.array([data["id"]], dtype="int64"))
+
 
 def search_index(category: FaissCategory, query_vector, top_k=5):
     """

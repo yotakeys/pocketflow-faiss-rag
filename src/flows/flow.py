@@ -1,11 +1,14 @@
 """Flow for handling interactions."""
 
 from pocketflow import Flow
+
 from constants import NodeState
-from nodes import CommandNode, ExitNode, AddNode, SearchNode
+from nodes import AddNode, CommandNode, ExitNode, SearchNode
+
 
 class FlowChat(Flow):
     """Flow for handling interactions."""
+
     def __init__(self):
         command_node = CommandNode()
         exit_node = ExitNode()

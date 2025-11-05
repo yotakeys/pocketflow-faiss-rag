@@ -2,6 +2,7 @@
 
 from enum import Enum
 
+
 class NodeState(str, Enum):
     """Enumeration for different states of a node."""
 

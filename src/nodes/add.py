@@ -1,13 +1,16 @@
 """Node to handle ADD command interactions with the system"""
 
-from pocketflow import Node
-from constants import NodeState
-from utils import add_index, add_data, get_embedding
 from random import randint
+
+from pocketflow import Node
+
+from constants import NodeState
+from utils import add_data, add_index, get_embedding
 
 
 class AddNode(Node):
     """Node to handle ADD command interactions with the system."""
+
     def prep(self, shared: dict):
         return shared["commands"]
 
@@ -19,11 +22,7 @@ class AddNode(Node):
         description = " ".join(prep_res["description"])
         id_data = randint(1000, 9999)
 
-        new_data = {
-            "id": id_data,
-            "category": category,
-            "description": description
-        }
+        new_data = {"id": id_data, "category": category, "description": description}
         print(f"Adding data: {new_data}")
         add_data(new_data)
 
@@ -32,7 +31,6 @@ class AddNode(Node):
         add_index(category, new_data)
         print(f"\nData added with ID: {id_data}")
         return NodeState.COMMAND
-
 
     def post(self, shared: dict, prep_res: dict, exec_res: NodeState):
         return exec_res

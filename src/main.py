@@ -1,4 +1,5 @@
 """Main entry point for the chatbot application."""
+
 from flows import FlowChat
 
 # Start the chat

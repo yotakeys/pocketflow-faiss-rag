@@ -1,7 +1,9 @@
 """Utility functions for generating text embeddings using OpenAI's API."""
 
 import numpy as np
+
 from config import config
+
 
 def get_embedding(text: str):
     """
@@ -15,10 +17,7 @@ def get_embedding(text: str):
     """
 
     client = config.openai.client
-    response = client.embeddings.create(
-        input=text,
-        model=config.openai.embedding_model
-    )
+    response = client.embeddings.create(input=text, model=config.openai.embedding_model)
 
     embeddings = np.array([d.embedding for d in response.data]).astype("float32")
     return embeddings

@@ -1,15 +1,17 @@
 """Node to handle chat interactions with the system"""
 
 from pocketflow import Node
+
 from constants import NodeState
 
 
 class CommandNode(Node):
     """Node to handle chat interactions with the system."""
+
     def prep(self, shared: dict):
         user_input = input("\nCOMMAND DESCRIPTION: ")
 
-        if user_input.lower() == 'exit':
+        if user_input.lower() == "exit":
             return NodeState.EXIT
         user_input = user_input.strip().split()
         shared["commands"] = {
@@ -32,6 +34,6 @@ class CommandNode(Node):
     def post(self, shared: dict, prep_res: dict, exec_res: NodeState):
         if exec_res == NodeState.EXIT:
             print("\nGoodbye!")
-            return NodeState.EXIT 
+            return NodeState.EXIT
 
         return exec_res

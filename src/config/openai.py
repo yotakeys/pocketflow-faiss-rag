@@ -1,7 +1,9 @@
 """Configuration for OpenAI API"""
 
 import os
+
 from openai import OpenAI
+
 
 class OpenAIConfig:
     """Configuration class for OpenAI"""
